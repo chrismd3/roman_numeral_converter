@@ -1,10 +1,9 @@
 def roman_numeral_converter(input)
   number_string = input.to_s 
-  number_string.reverse!
   
-  singles = number_string[0].to_i
-  tens = number_string[1].to_i
-  hundreds = number_string[2].to_i
+  singles = number_string[-1].to_i
+  tens = number_string[-2].to_i
+  hundreds = number_string[-3].to_i
   thousands = input/1000
   
   roman_numeral_output = 'M' * thousands
