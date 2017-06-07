@@ -5,14 +5,7 @@ def roman_numeral_converter(input)
   singles = number_string[0].to_i
   tens = number_string[1].to_i
   hundreds = number_string[2].to_i
-  
-  if input >= 1000
-    number_string = number_string[3..number_string.size]
-    number_string.reverse!
-    thousands = number_string.to_i
-  else
-    thousands = 0
-  end
+  thousands = input/1000
   
   roman_numeral_output = 'M' * thousands
   roman_numeral_output << case_check(hundreds, 'M', 'D', 'C')
